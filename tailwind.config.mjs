@@ -9,6 +9,9 @@ export default {
       colors: {
         "main-red": "#B31221",
       },
+      screens: {
+        xs: "540px",
+      },
     },
   },
   plugins: [],
