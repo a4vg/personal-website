@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         sans: ["Roboto Flex", "sans-serif"],
       },
+      colors: {
+        "main-red": "#B31221",
+      },
     },
   },
   plugins: [],
