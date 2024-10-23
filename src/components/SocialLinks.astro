@@ -29,12 +29,12 @@ const { class: clazz } = Astro.props;
 
 <div
   class:list={[
-    "xs:flex-row xs:gap-11 inline-flex flex-col justify-center gap-5 rounded border-2 border-dotted border-main-red px-5 py-3 text-sm text-black",
+    "inline-flex flex-col justify-center gap-5 rounded border-2 border-dotted border-main-red px-5 py-3 text-sm text-black xs:flex-row xs:gap-11",
     clazz || "",
   ]}
 >
   {
-    links.map(l => (
+    links.map((l) => (
       <a
         class="flex items-center gap-2 transition-opacity hover:opacity-70"
         href={l.link}
