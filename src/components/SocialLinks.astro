@@ -1,29 +1,5 @@
 ---
-import LinkedinIcon from "../assets/images/icons/linkedin.svg";
-import GithubIcon from "../assets/images/icons/github.svg";
-import EmailIcon from "../assets/images/icons/email.svg";
-
-const links = [
-  {
-    name: "linkedin",
-    icon: LinkedinIcon,
-    label: "linkedin.com/in/a4vg",
-    link: "https://linkedin.com/in/a4vg",
-  },
-  {
-    name: "github",
-    icon: GithubIcon,
-    label: "@a4vg",
-    link: "https://github.com/a4vg",
-  },
-  {
-    name: "email",
-    icon: EmailIcon,
-    label: "andreav@duck.com",
-    link: "mailto:andreav@duck.com",
-  },
-];
-
+import socialLinks from "../data/socialLinks";
 const { class: clazz } = Astro.props;
 ---
 
@@ -34,7 +10,7 @@ const { class: clazz } = Astro.props;
   ]}
 >
   {
-    links.map((l) => (
+    socialLinks.map((l) => (
       <a
         class="flex items-center gap-2 transition-opacity hover:opacity-70"
         href={l.link}
