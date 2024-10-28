@@ -26,7 +26,7 @@ export default [
     name: "Haystack News",
     link: "https://haystack.tv",
     logo: HaystackLogo,
-    location: "🇨🇦 Ontario, Canada (remote)",
+    location: "🇺🇸 San Francisco, CA, US (remote)",
     description:
       "News streaming service with different local, national and international channels",
     positions: [
@@ -76,7 +76,7 @@ export default [
         start: new Date("2020-07"),
         end: new Date("2021-04"),
         teamDescription:
-          "We created the web platform. There wasn't one when I joined!",
+          "We created the web app. There wasn't one when I joined!",
         stack: ["Java", "CodePipeline", "CloudFormation", "CDK", "DynamoDB"],
       },
     ],
