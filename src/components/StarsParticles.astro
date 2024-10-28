@@ -1,0 +1,42 @@
+---
+interface Props {
+  clazz?: string;
+}
+
+const { clazz = "" } = Astro.props;
+---
+
+<script>
+  import { loadStarsPreset } from "@tsparticles/preset-stars";
+  import { tsParticles } from "@tsparticles/engine";
+
+  (async () => {
+    await loadStarsPreset(tsParticles);
+
+    await tsParticles.load({
+      id: "stars",
+      options: {
+        preset: "stars",
+        fullScreen: {
+          enable: false,
+        },
+        background: {
+          opacity: 0,
+        },
+        particles: {
+          number: {
+            value: 50,
+          },
+          color: {
+            value: "#fff118",
+          },
+          move: {
+            speed: 0.75,
+          },
+        },
+      },
+    });
+  })();
+</script>
+
+<div id="stars" class:list={["absolute -z-10", clazz]}></div>
