@@ -9,10 +9,44 @@ if (!linkedinLink) {
 }
 ---
 
+<script>
+  import { loadStarsPreset } from "@tsparticles/preset-stars";
+  import { tsParticles } from "@tsparticles/engine";
+
+  (async () => {
+    await loadStarsPreset(tsParticles);
+
+    await tsParticles.load({
+      id: "stars",
+      options: {
+        preset: "stars",
+        fullScreen: {
+          enable: false,
+        },
+        background: {
+          opacity: 0,
+        },
+        particles: {
+          number: {
+            value: 50,
+          },
+          color: {
+            value: "#fff118",
+          },
+          move: {
+            speed: 0.75,
+          },
+        },
+      },
+    });
+  })();
+</script>
+
 <section
-  class="w-full bg-[linear-gradient(180deg,_#303034_6.21%,_#00063F_33.23%,_#000B71_72.69%,_rgba(0,118,182,0.70)_97.74%)] px-8 pb-8 pt-12 text-white"
+  class="relative w-full bg-[linear-gradient(180deg,_#303034_6.21%,_#00063F_33.23%,_#000B71_72.69%,_rgba(0,118,182,0.70)_97.74%)] text-white"
 >
-  <div class="max-w-screen-2xl 2xl:mx-auto">
+  <div id="stars" class="absolute top-[15%] -z-10 h-3/5 w-full"></div>
+  <div class="max-w-screen-2xl px-8 pb-8 pt-12 2xl:mx-auto">
     <h2 class="mb-3 mt-6 text-3xl font-bold">Work Experience</h2>
     <p class="text-lg">
       Here are the places I've worked at, with a small description of my team
