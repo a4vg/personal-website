@@ -1,8 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../sections/Header.astro";
+import WorkExperience from "../sections/WorkExperience.astro";
 ---
 
 <Layout title="Andrea Velasquez">
   <Header />
+  <div class="content">
+    <WorkExperience />
+  </div>
 </Layout>
+
+<style is:global>
+  .content a {
+    border-bottom-width: 2px;
+    border-bottom-color: initial; /* same color as text */
+    border-style: dotted;
+    padding-bottom: 2px;
+    transition: ease-in 150ms opacity;
+  }
+
+  .content a:hover {
+    opacity: 0.7;
+  }
+</style>

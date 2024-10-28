@@ -1,0 +1,65 @@
+---
+import { humanReadablePeriod, humanReadableLength } from "../utilities/dates";
+
+interface Props {
+  job: {
+    name: string;
+    link: string;
+    logo: ImageMetadata;
+    location: string;
+    description: string;
+    positions: {
+      title: string;
+      start: Date;
+      end: Date;
+      teamDescription: string;
+      stack: string[];
+    }[];
+  };
+  clazz?: string;
+}
+
+const { job, clazz = "" } = Astro.props;
+---
+
+<div class={clazz}>
+  <div class="flex items-center gap-4">
+    <div>
+      <img src={job.logo.src} alt={job.name} width="65" />
+    </div>
+    <div>
+      <h3 class="text-lg font-bold">
+        <a href={job.link}>{job.name}</a>
+      </h3>
+      <p>{job.description}</p>
+      <p>{job.location}</p>
+    </div>
+  </div>
+
+  {
+    job.positions.map(p => (
+      <div class="mt-8 flex flex-col gap-4 md:ml-20 xs:flex-row xs:gap-0">
+        {/* title and dates info */}
+        <div class="flex flex-row justify-between md:pr-4 xs:flex-shrink-0 xs:flex-col xs:justify-center xs:border-r xs:pr-2 xs:text-right">
+          <p class="pr-4 font-bold xs:mb-1 xs:pr-0">{p.title}</p>
+          <div class="flex-shrink-0 text-right">
+            <p>{humanReadablePeriod(p.start, p.end)}</p>
+            <p>({humanReadableLength(p.start, p.end)})</p>
+          </div>
+        </div>
+        {/* job description and stack */}
+        <div class="flex flex-col justify-center pt-5 md:pl-4 xs:pl-2 xs:pt-0">
+          <div class="flex">
+            <span class="mr-2">👥</span>
+            <p class="text-justifyi xs:text-left">{p.teamDescription}</p>
+          </div>
+
+          <div class="flex">
+            <span class="mr-2">🔧</span>
+            <p class="text-justifyi xs:text-left"> {p.stack.join(", ")}</p>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>

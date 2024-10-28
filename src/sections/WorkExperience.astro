@@ -1,0 +1,41 @@
+---
+import WorkItem from "../components/WorkItem.astro";
+import jobs from "../data/jobs";
+import socialLinks from "../data/socialLinks";
+
+const linkedinLink = socialLinks.find(sl => sl.name === "linkedin")?.link;
+if (!linkedinLink) {
+  throw new Error("Missing 'linkedin' link");
+}
+---
+
+<section
+  class="w-full bg-[linear-gradient(180deg,_#303034_6.21%,_#00063F_33.23%,_#000B71_72.69%,_rgba(0,118,182,0.70)_97.74%)] px-8 pb-8 pt-12 text-white"
+>
+  <div class="max-w-screen-2xl 2xl:mx-auto">
+    <h2 class="mb-3 mt-6 text-3xl font-bold">Work Experience</h2>
+    <p class="text-lg">
+      Here are the places I've worked at, with a small description of my team
+      and part of the stack I used.
+      <br />
+      You can also find my job achievements and more information about the stack
+      on
+      <a href={linkedinLink} target="_blank"> my LinkedIn</a>.
+    </p>
+
+    <div class="mt-6">
+      {jobs.map(job => <WorkItem clazz=" mb-14" job={job} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    clip-path: polygon(
+      0 0,
+      100% calc(min(max(50px, 6vw), 150px)) /* lower and upper bounds */,
+      100% 100%,
+      0% 100%
+    );
+  }
+</style>
