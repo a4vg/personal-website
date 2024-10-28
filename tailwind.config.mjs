@@ -17,6 +17,15 @@ export default {
       colors: {
         "main-red": "#B31221",
       },
+      animation: {
+        levitate: "levitate 4s ease-in-out infinite",
+      },
+      keyframes: {
+        levitate: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10%)" },
+        },
+      },
     },
   },
   plugins: [],

@@ -3,6 +3,7 @@ import WorkItem from "../components/WorkItem.astro";
 import StarsParticles from "../components/StarsParticles.astro";
 import jobs from "../data/jobs";
 import socialLinks from "../data/socialLinks";
+import EnterpriseImage from "../assets/images/enterprise.svg";
 
 const linkedinLink = socialLinks.find(sl => sl.name === "linkedin")?.link;
 if (!linkedinLink) {
@@ -14,6 +15,7 @@ if (!linkedinLink) {
   class="relative w-full bg-[linear-gradient(180deg,_#303034_6.21%,_#00063F_33.23%,_#000B71_72.69%,_rgba(0,118,182,0.70)_97.74%)] text-white"
 >
   <StarsParticles clazz="top-[15%] h-3/5 w-full" />
+  <div class="relative max-w-screen-2xl px-8 pb-8 pt-12 2xl:mx-auto">
     <h2 class="mb-3 mt-6 text-3xl font-bold">Work Experience</h2>
     <p class="text-lg">
       Here are the places I've worked at, with a small description of my team
@@ -23,10 +25,15 @@ if (!linkedinLink) {
       on
       <a href={linkedinLink} target="_blank"> my LinkedIn</a>.
     </p>
-
     <div class="mt-6">
       {jobs.map(job => <WorkItem clazz=" mb-14" job={job} />)}
     </div>
+
+    <img
+      class="animate-levitate absolute right-[5%] top-1/3 hidden lg:block xl:right-[15%]"
+      src={EnterpriseImage.src}
+      alt="enterprise"
+    />
   </div>
 </section>
 
