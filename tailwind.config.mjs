@@ -15,6 +15,7 @@ export default {
         sans: ["Roboto Flex", "sans-serif"],
       },
       colors: {
+        "main-white": "#F4F4F4",
         "main-red": "#B31221",
       },
       animation: {
