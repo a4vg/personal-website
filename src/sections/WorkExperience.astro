@@ -5,7 +5,7 @@ import jobs from "../data/jobs";
 import socialLinks from "../data/socialLinks";
 import EnterpriseImage from "../assets/images/enterprise.svg";
 
-const linkedinLink = socialLinks.find(sl => sl.name === "linkedin")?.link;
+const linkedinLink = socialLinks.find((sl) => sl.name === "linkedin")?.link;
 if (!linkedinLink) {
   throw new Error("Missing 'linkedin' link");
 }
@@ -26,11 +26,11 @@ if (!linkedinLink) {
       <a href={linkedinLink} target="_blank"> my LinkedIn</a>.
     </p>
     <div class="mt-6">
-      {jobs.map(job => <WorkItem clazz=" mb-14" job={job} />)}
+      {jobs.map((job) => <WorkItem clazz=" mb-14" job={job} />)}
     </div>
 
     <img
-      class="animate-levitate absolute right-[5%] top-1/3 hidden lg:block xl:right-[15%]"
+      class="absolute right-[5%] top-1/3 hidden animate-levitate lg:block xl:right-[15%]"
       src={EnterpriseImage.src}
       alt="enterprise"
     />
