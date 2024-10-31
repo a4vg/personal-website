@@ -1,0 +1,10 @@
+<svg width="100%" height="58" xmlns="http://www.w3.org/2000/svg">
+<defs>
+    <pattern id="wave" patternUnits="userSpaceOnUse" width="623" height="58">
+      <!-- by setting fill="currentColor", we can set the fill color from the parent element of the svg -->
+<path d="M0 57.9998C0 57.9998 0 58 623 57.9998V56.4998C454.126 56.4998 416.984 -0.000179291 311.005 -0.000179291C205.025 -0.000179291 174.321 51.4998 0 56.4998V57.9998Z" fill="currentColor"/>
+    </pattern>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#wave)"/>
+</svg>
