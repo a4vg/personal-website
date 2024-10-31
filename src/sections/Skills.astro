@@ -1,5 +1,6 @@
 ---
 import WaveShape from "../assets/shapes/wave.svg?raw";
+import skills from "../data/skills";
 ---
 
 <div class="absolute -ml-[15%] w-[115%] -translate-y-full text-main-white">
@@ -8,9 +9,38 @@ import WaveShape from "../assets/shapes/wave.svg?raw";
 <section>
   <div class="relative max-w-screen-2xl px-8 pb-8 2xl:mx-auto">
     <h2 class="mb-3 mt-6 text-3xl font-bold text-main-red">Skills</h2>
-    <p class="text-lg">
+    <p class="mb-5 text-lg">
       A non-exhaustive list of the tools I've learned along the way. It keeps
       growing!
     </p>
+
+    <!-- Programming Languages -->
+    <div class="flex w-1/4 flex-col items-center gap-2">
+      <!-- Title -->
+      <h3 class="text-lg font-bold text-main-red">Programming Languages</h3>
+      <!-- Dialog shape with content -->
+      <div class="relative">
+        <div
+          class="bg-main-gray flex flex-wrap justify-between gap-6 gap-y-6 rounded-md px-6 py-8"
+        >
+          {
+            skills.languages.map(language => (
+              <div class="flex w-1/4 flex-col items-center">
+                <img
+                  class="h-11 w-11 object-scale-down"
+                  src={language.icon.src}
+                  alt={language.name}
+                />
+                <span class="mt-1 text-sm">{language.name}</span>
+              </div>
+            ))
+          }
+        </div>
+        <div
+          class="bg-main-gray absolute top-[80%] -z-10 ml-8 h-24 w-1/3 rotate-[60deg] rounded"
+        >
+        </div>
+      </div>
+    </div>
   </div>
 </section>

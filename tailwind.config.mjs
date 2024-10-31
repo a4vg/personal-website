@@ -17,6 +17,7 @@ export default {
       colors: {
         "main-white": "#F4F4F4",
         "main-red": "#B31221",
+        "main-gray": "#E6E6E6",
       },
       animation: {
         levitate: "levitate 4s ease-in-out infinite",
