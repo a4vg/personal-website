@@ -195,10 +195,10 @@ import skills from "../data/skills";
         <!-- Title -->
         <h3 class="text-lg font-bold text-main-red">CI/CD</h3>
         <!-- CI/CD shape -->
-        <div class="flex h-[105%] items-center">
-          <div class="bg-main-gray h-full w-6"></div>
+        <div class="relative flex items-center py-4">
+          <div class="bg-main-gray absolute inset-y-0 left-0 w-6"></div>
           <div
-            class="bg-main-gray flex w-full flex-wrap justify-center gap-y-5 py-4"
+            class="bg-main-gray flex w-full flex-wrap justify-center gap-y-5 px-4 py-4"
           >
             {
               skills.cicd.map(pip => (
@@ -215,7 +215,7 @@ import skills from "../data/skills";
               ))
             }
           </div>
-          <div class="bg-main-gray h-full w-6"></div>
+          <div class="bg-main-gray absolute inset-y-0 right-0 w-6"></div>
         </div>
       </div>
 
