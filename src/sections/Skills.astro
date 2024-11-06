@@ -10,12 +10,12 @@ import SkillItem from "../elements/SkillItem.astro";
 <section>
   <div class="relative max-w-screen-2xl px-8 pb-8 2xl:mx-auto">
     <h2 class="mb-3 mt-6 text-3xl font-bold text-main-red">Skills</h2>
-    <p class="mb-5 text-lg">
+    <p class="mb-8 text-lg">
       A non-exhaustive list of the tools I've learned along the way. It keeps
       growing!
     </p>
 
-    <div class="flex flex-wrap justify-center gap-11 gap-y-10">
+    <div class="flex flex-wrap justify-center gap-x-11 gap-y-10 lg:gap-y-6">
       <!-- Programming Languages -->
       <div class="flex w-[250px] flex-col items-center gap-2">
         <!-- Title -->
@@ -114,6 +114,9 @@ import SkillItem from "../elements/SkillItem.astro";
           <div class="bg-main-gray h-7 w-full rounded"></div>
         </div>
       </div>
+
+      <!-- break line -->
+      <div class="hidden lg:block lg:w-full"></div>
 
       <!-- Cloud -->
       <div class="flex flex-col items-center gap-2">
