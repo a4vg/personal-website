@@ -2,6 +2,7 @@
 import WaveShape from "../assets/shapes/wave.svg?raw";
 import skills from "../data/skills";
 import SkillItem from "../elements/SkillItem.astro";
+import SkillsCategoryLayout from "../layouts/SkillsCategoryLayout.astro";
 ---
 
 <div class="absolute -ml-[15%] w-[115%] -translate-y-full text-main-white">
@@ -17,9 +18,7 @@ import SkillItem from "../elements/SkillItem.astro";
 
     <div class="flex flex-wrap justify-center gap-x-11 gap-y-10 lg:gap-y-6">
       <!-- Programming Languages -->
-      <div class="flex w-[250px] flex-col items-center gap-2">
-        <!-- Title -->
-        <h3 class="text-lg font-bold text-main-red">Programming Languages</h3>
+      <SkillsCategoryLayout title="Programming Languages" clazz="w-[250px]">
         <!-- Dialog shape with content -->
         <div class="relative mb-11">
           <div
@@ -36,12 +35,10 @@ import SkillItem from "../elements/SkillItem.astro";
           >
           </div>
         </div>
-      </div>
+      </SkillsCategoryLayout>
 
       <!-- Databases -->
-      <div class="flex w-[300px] flex-col items-center gap-2">
-        <!-- Title -->
-        <h3 class="text-lg font-bold text-main-red">Databases</h3>
+      <SkillsCategoryLayout title="Databases" clazz="w-[300px]">
         <!-- Database shape -->
         <div class="flex w-full flex-col gap-y-2">
           <div
@@ -90,12 +87,10 @@ import SkillItem from "../elements/SkillItem.astro";
             </div>
           </div>
         </div>
-      </div>
+      </SkillsCategoryLayout>
 
       <!-- Libraries and Frameworks -->
-      <div class="flex flex-col items-center gap-2">
-        <!-- Title -->
-        <h3 class="text-lg font-bold text-main-red">Frameworks & Libraries</h3>
+      <SkillsCategoryLayout title="Frameworks & Libraries">
         <!-- Library shape -->
         <div class="flex w-[400px] flex-col items-center">
           <div
@@ -113,15 +108,14 @@ import SkillItem from "../elements/SkillItem.astro";
           </div>
           <div class="bg-main-gray h-7 w-full rounded"></div>
         </div>
-      </div>
+      </SkillsCategoryLayout>
 
       <!-- break line -->
       <div class="hidden lg:block lg:w-full"></div>
 
       <!-- Cloud -->
-      <div class="flex flex-col items-center gap-2">
-        <!-- Title -->
-        <h3 class="text-lg font-bold text-main-red">Cloud</h3>
+
+      <SkillsCategoryLayout title="Cloud">
         <!-- Cloud shape -->
         <div class="flex w-[250px] flex-col items-center">
           <div class="-mb-12 flex items-end">
@@ -138,12 +132,9 @@ import SkillItem from "../elements/SkillItem.astro";
             }
           </div>
         </div>
-      </div>
+      </SkillsCategoryLayout>
 
-      <!-- CI/CD -->
-      <div class="flex flex-col items-center gap-2">
-        <!-- Title -->
-        <h3 class="text-lg font-bold text-main-red">CI/CD</h3>
+      <SkillsCategoryLayout title="CI/CD">
         <!-- CI/CD shape -->
         <div class="relative flex items-center py-4">
           <div class="bg-main-gray absolute inset-y-0 left-0 w-6"></div>
@@ -158,12 +149,10 @@ import SkillItem from "../elements/SkillItem.astro";
           </div>
           <div class="bg-main-gray absolute inset-y-0 right-0 w-6"></div>
         </div>
-      </div>
+      </SkillsCategoryLayout>
 
       <!-- Others -->
-      <div class="flex flex-grow-0 flex-col items-center gap-2">
-        <!-- Title -->
-        <h3 class="text-lg font-bold text-main-red">Others</h3>
+      <SkillsCategoryLayout title="Others" clazz="flex-grow-0">
         <!-- Others shape -->
         <div
           class="bg-main-gray my-auto flex items-center gap-1 rounded px-4 py-4"
@@ -174,7 +163,7 @@ import SkillItem from "../elements/SkillItem.astro";
             ))
           }
         </div>
-      </div>
+      </SkillsCategoryLayout>
     </div>
   </div>
 </section>

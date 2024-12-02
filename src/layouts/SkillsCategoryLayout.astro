@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string;
+  clazz?: string;
+}
+
+const { title, clazz = "" } = Astro.props;
+---
+
+<div class:list={["flex flex-col items-center gap-2", clazz]}>
+  <!-- Title -->
+  <h3 class="text-lg font-bold text-main-red">{title}</h3>
+  <!-- Dialog shape with content -->
+  <slot />
+</div>
