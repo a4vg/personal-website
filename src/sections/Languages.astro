@@ -1,0 +1,24 @@
+<section class="bg-gradient-to-r from-[#780b16] to-main-red text-white">
+  <div class="relative max-w-screen-2xl px-8 pb-6 pt-16 2xl:mx-auto">
+    <h2 class="mb-3 text-3xl font-bold">Languages</h2>
+    <p class="mb-2">
+      This section is short and boring, like the list of languages I know,
+      <span class="font-bold">English</span>
+      and
+      <span class="font-bold">Spanish</span>.
+    </p>
+
+    <p class="mb-8">I'm planning on adding French in the next few years :)</p>
+  </div>
+</section>
+
+<style>
+  section {
+    clip-path: polygon(
+      0 calc(min(max(30px, 3vw), 60px)) /* lower and upper bounds */,
+      100% 0,
+      100% calc(100% - min(max(30px, 3vw), 60px)),
+      0% 100%
+    );
+  }
+</style>
