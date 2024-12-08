@@ -1,0 +1,53 @@
+---
+import UTECPhoto from "../assets/images/utec.jpg";
+import LightBulbIcon from "../assets/images/icons/light_bulb.png";
+---
+
+<section>
+  <div class="relative max-w-screen-2xl px-8 pb-6 pt-8 2xl:mx-auto">
+    <h2 class="mb-3 text-3xl font-bold text-main-red">Education</h2>
+
+    <div class="flex flex-wrap gap-5 md:items-center">
+      <div class="w-64">
+        <figure>
+          <img class="rounded-md" src={UTECPhoto.src} alt="utec" />
+          <figcaption class="text-small mt-2 italic">
+            University Campus UTEC Lima
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="mb-6">
+        <p>
+          I have a <span class="font-bold">Bachelor's in Computer Science</span>
+        </p>
+        <p>
+          From the
+          <a href="https://utec.edu.pe/" target="_blank">
+            University of Engineering and Technology (UTEC)
+          </a>
+        </p>
+        <p>🇵🇪 Lima, Peru</p>
+        <p>2017 - 2022</p>
+      </div>
+
+      <!-- Fun fact -->
+      <div class="mx-auto min-h-56 w-1/6 min-w-56">
+        <div
+          class="border-color aspect-square rounded-full border-4 border-[#9C101E] p-4 pt-[15%] text-center 2xl:pt-[20%]"
+        >
+          <p
+            class="-ml-2 mb-2 flex items-center justify-center font-bold text-main-red"
+          >
+            <img src={LightBulbIcon.src} alt="light-bulb" class="mr-2 h-6" /> Fun
+            Fact
+          </p>
+          <p>
+            The architects that designed my university campus
+            <a href="#"> won the Pritzker Prize </a> (the “Nobel Prize of Architecture”).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
