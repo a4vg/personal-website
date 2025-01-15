@@ -5,7 +5,10 @@ import SkillItem from "../elements/SkillItem.astro";
 import SkillsCategoryLayout from "../layouts/SkillsCategoryLayout.astro";
 ---
 
-<div class="absolute -ml-[15%] w-[115%] -translate-y-full text-main-white">
+<!-- the scale is increased slighly to avoid showing a gap in safari when translate y is -100%  -->
+<div
+  class="absolute -ml-[15%] w-[115%] -translate-y-full scale-y-[1.06] text-main-white"
+>
   <Fragment set:html={WaveShape} />
 </div>
 <section>
