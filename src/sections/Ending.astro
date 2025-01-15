@@ -1,5 +1,5 @@
 ---
-import ThatsAllFolksImage from "../assets/images/thats_all_folks.png"; // replace with real image
+import ThatsAllFolksImage from "../assets/images/thats_all_folks.png";
 ---
 
 <section class="flex h-screen items-center justify-center px-8 py-8 pb-6 pt-8">
@@ -11,3 +11,17 @@ import ThatsAllFolksImage from "../assets/images/thats_all_folks.png"; // replac
     />
   </div>
 </section>
+
+<style>
+  @keyframes grow {
+    from {
+      scale: 0;
+    }
+  }
+
+  img {
+    animation: grow linear both;
+    animation-timeline: view();
+    animation-range: 20% 50%;
+  }
+</style>
