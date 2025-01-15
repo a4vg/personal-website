@@ -4,6 +4,7 @@ import StarsParticles from "../components/StarsParticles.astro";
 import jobs from "../data/jobs";
 import socialLinks from "../data/socialLinks";
 import EnterpriseImage from "../assets/images/enterprise.svg";
+import DuckInBathtubImage from "../assets/images/duck-in-bathtub.png";
 
 const linkedinLink = socialLinks.find(sl => sl.name === "linkedin")?.link;
 if (!linkedinLink) {
@@ -11,11 +12,17 @@ if (!linkedinLink) {
 }
 ---
 
+<span id="duck-bathtub-wrapper" class="inline-block">
+  <img src={DuckInBathtubImage.src} alt="duck-in-bathtub" />
+</span>
+
 <section
   class="relative w-full bg-[linear-gradient(180deg,_#303034_6.21%,_#00063F_33.23%,_#000B71_72.69%,_rgba(0,118,182,0.70)_97.74%)] text-white"
 >
   <StarsParticles clazz="top-[15%] h-3/5 w-full" />
-  <div class="relative max-w-screen-2xl px-8 pb-8 pt-12 2xl:mx-auto">
+  <div
+    class="relative max-w-screen-2xl px-8 pb-8 pt-12 2xl:mx-auto min-[2000px]:pt-20"
+  >
     <h2 class="mb-3 mt-6 text-3xl font-bold">Work Experience</h2>
     <p class="text-lg">
       Here are the places I've worked at, with a small description of my team
@@ -38,12 +45,56 @@ if (!linkedinLink) {
 </section>
 
 <style>
+  /* Less than 600px width */
   section {
-    clip-path: polygon(
-      0 0,
-      100% calc(min(max(50px, 6vw), 150px)) /* lower and upper bounds */,
-      100% 100%,
-      0% 100%
-    );
+    --separator-slope: 10vw;
+  }
+
+  #duck-bathtub-wrapper {
+    --duck-rotation: 6deg;
+  }
+
+  /* More than 600px width */
+  @media screen and (min-width: 600px) {
+    section {
+      --separator-slope: 7vw;
+    }
+
+    #duck-bathtub-wrapper {
+      --duck-rotation: 4deg;
+    }
+  }
+
+  /* More than 3000px width */
+  @media screen and (min-width: 3000px) {
+    section {
+      --separator-slope: 4vw;
+    }
+
+    #duck-bathtub-wrapper {
+      --duck-rotation: 2.3deg;
+    }
+  }
+
+  @keyframes slip {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translate(105vw);
+    }
+  }
+
+  section {
+    clip-path: polygon(0 0, 100% var(--separator-slope), 100% 100%, 0% 100%);
+  }
+  #duck-bathtub-wrapper {
+    transform: rotate(var(--duck-rotation)) translateY(12px);
+  }
+
+  #duck-bathtub-wrapper img {
+    animation: slip linear both;
+    animation-timeline: view();
+    animation-range: 30% 100%;
   }
 </style>
