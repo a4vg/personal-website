@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { humanReadablePeriod, humanReadableLength } from "../utilities/dates";
 
 interface Props {
@@ -25,7 +26,13 @@ const { job, clazz = "" } = Astro.props;
 <div class={clazz}>
   <div class="flex items-center gap-4">
     <div class="flex-shrink-0">
-      <img src={job.logo.src} alt={job.name} width="65" />
+      <Image
+        src={job.logo}
+        alt={job.name}
+        width="65"
+        height="65"
+        quality="max"
+      />
     </div>
     <div>
       <h3 class="text-lg font-bold">
@@ -37,7 +44,7 @@ const { job, clazz = "" } = Astro.props;
   </div>
 
   {
-    job.positions.map((p) => (
+    job.positions.map(p => (
       <div class="mt-5 flex flex-col gap-2 xs:flex-row xs:gap-0 sm:mt-8 md:ml-20">
         {/* title and dates info */}
         <div class="flex flex-row justify-between xs:flex-shrink-0 xs:flex-col xs:justify-center xs:border-r xs:pr-2 xs:text-right md:pr-4">

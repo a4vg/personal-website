@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import UTECPhoto from "../assets/images/utec.jpg";
 import LightBulbIcon from "../assets/images/icons/light_bulb.png";
 import DuckInPlane from "../assets/images/duck-in-plane.png";
@@ -20,7 +21,7 @@ import DuckInPlane from "../assets/images/duck-in-plane.png";
     <div class="flex flex-wrap gap-5 md:items-center">
       <div class="w-64">
         <figure>
-          <img class="rounded-md" src={UTECPhoto.src} alt="utec" />
+          <Image class="rounded-md" src={UTECPhoto} alt="utec" />
           <figcaption class="text-small mt-2 italic">
             University Campus UTEC Lima
           </figcaption>
