@@ -32,7 +32,7 @@ export default [
     positions: [
       {
         title: "Tech Lead",
-        start: new Date("2023-12"),
+        start: new Date("2024-01"),
         end: new Date("2024-04"),
         teamDescription:
           "Lead of the Web-based TVs team and still part of Website team",
