@@ -14,8 +14,13 @@ export function humanReadableLength(start: Date, end: Date) {
     throw new Error("end date should be after start date");
   }
 
-  const monthsDiff = end.getMonth() - start.getMonth() + 1; // month inclusive
-  const yearsDiff = end.getFullYear() - start.getFullYear();
+  let totalMonthDiff = (end.getFullYear() - start.getFullYear()) * 12;
+  totalMonthDiff -= start.getMonth();
+  totalMonthDiff += end.getMonth();
+  totalMonthDiff++; // inclusive
+
+  const yearsDiff = Math.floor(totalMonthDiff / 12);
+  const monthsDiff = totalMonthDiff - yearsDiff * 12;
 
   let monthsStr = "";
   if (monthsDiff > 0) {
