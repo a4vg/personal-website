@@ -36,7 +36,7 @@ export default [
         end: new Date("2024-04"),
         teamDescription:
           "Lead of the Web-based TVs team and still part of Website team",
-        stack: ["Same stack as before"],
+        stack: ["Typescript", "Svelte", "React", "MongoDB", "Snowflake"],
       },
       {
         title: "Software Developer",
