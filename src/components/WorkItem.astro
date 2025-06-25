@@ -12,7 +12,7 @@ interface Props {
     positions: {
       title: string;
       start: Date;
-      end: Date;
+      end?: Date;
       teamDescription: string;
       stack: string[];
     }[];
@@ -52,7 +52,7 @@ const { job, clazz = "" } = Astro.props;
           <p class="pr-4 font-bold xs:mb-1 xs:pr-0">{p.title}</p>
           <div class="flex-shrink-0 text-right">
             <p>{humanReadablePeriod(p.start, p.end)}</p>
-            <p>({humanReadableLength(p.start, p.end)})</p>
+            <p>({humanReadableLength(p.start, p.end ?? new Date())})</p>
           </div>
         </div>
         {/* job description and stack */}

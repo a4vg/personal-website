@@ -1,3 +1,4 @@
+import GoogleLogo from "../assets/images/work/google.png";
 import FabricloopLogo from "../assets/images/work/fabricloop.png";
 import BlackmouthGamesLogo from "../assets/images/work/blackmouth.png";
 import HaystackLogo from "../assets/images/work/haystack.png";
@@ -6,6 +7,21 @@ import TranzfermeLogo from "../assets/images/work/tranzferme.png";
 import AmigoCloudLogo from "../assets/images/work/amigocloud.png";
 
 export default [
+  {
+    name: "Google",
+    link: "https://www.google.com/",
+    logo: GoogleLogo,
+    location: "🇮🇪 Dublin, Ireland",
+    description: "Big tech company",
+    positions: [
+      {
+        title: "Software Engineer II",
+        start: new Date("2025-06"),
+        teamDescription: "Site Reliability Engineering team",
+        stack: ["Internal tools", "Go", "C++"],
+      },
+    ],
+  },
   {
     name: "Fabricloop",
     link: "https://fabricloop.com/",

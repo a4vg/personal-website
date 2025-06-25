@@ -1,10 +1,11 @@
-export function humanReadablePeriod(start: Date, end: Date) {
+export function humanReadablePeriod(start: Date, end?: Date) {
   const dateOptions: Intl.DateTimeFormatOptions = {
     month: "short",
     year: "numeric",
   };
   const startStr = start.toLocaleString("default", dateOptions);
-  const endStr = end.toLocaleString("default", dateOptions);
+
+  const endStr = end ? end.toLocaleString("default", dateOptions) : "Present";
 
   return `${startStr} - ${endStr}`;
 }
