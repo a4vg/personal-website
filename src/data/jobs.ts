@@ -1,3 +1,4 @@
+import FabricloopLogo from "../assets/images/work/fabricloop.png";
 import BlackmouthGamesLogo from "../assets/images/work/blackmouth.png";
 import HaystackLogo from "../assets/images/work/haystack.png";
 import BevertecLogo from "../assets/images/work/bevertec.png";
@@ -5,6 +6,22 @@ import TranzfermeLogo from "../assets/images/work/tranzferme.png";
 import AmigoCloudLogo from "../assets/images/work/amigocloud.png";
 
 export default [
+  {
+    name: "Fabricloop",
+    link: "https://fabricloop.com/",
+    logo: FabricloopLogo,
+    location: "🇺🇸 San Francisco, CA, US (remote)",
+    description: "Workspaces for team collaboration",
+    positions: [
+      {
+        title: "Freelance Developer",
+        start: new Date("2025-03"),
+        end: new Date("2025-05"),
+        teamDescription: "Developed part of the first version of the web app",
+        stack: ["Supabase", "SvelteKit", "Shadcn", "Tiptap"],
+      },
+    ],
+  },
   {
     name: "Blackmouth Games",
     link: "https://www.blackmouthgames.com/",
