@@ -7,7 +7,7 @@ import socialLinks from "../data/socialLinks";
 import EnterpriseImage from "../assets/images/enterprise.svg";
 import DuckInBathtubImage from "../assets/images/duck-in-bathtub.png";
 
-const linkedinLink = socialLinks.find(sl => sl.name === "linkedin")?.link;
+const linkedinLink = socialLinks.find((sl) => sl.name === "linkedin")?.link;
 if (!linkedinLink) {
   throw new Error("Missing 'linkedin' link");
 }
@@ -34,7 +34,7 @@ if (!linkedinLink) {
       <a href={linkedinLink} target="_blank"> my LinkedIn</a>.
     </p>
     <div class="mt-6">
-      {jobs.map(job => <WorkItem clazz=" mb-14" job={job} />)}
+      {jobs.map((job) => <WorkItem clazz=" mb-14" job={job} />)}
     </div>
 
     <Image
