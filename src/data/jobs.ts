@@ -17,7 +17,7 @@ export default [
       {
         title: "Software Engineer II",
         start: new Date("2025-06"),
-        teamDescription: "Site Reliability Engineering team",
+        teamDescription: "Rollouts Production Health team",
         stack: ["Internal tools", "Go", "C++"],
       },
     ],
