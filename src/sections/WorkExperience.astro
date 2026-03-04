@@ -7,7 +7,7 @@ import socialLinks from "../data/socialLinks";
 import EnterpriseImage from "../assets/images/enterprise.svg";
 import DuckInBathtubImage from "../assets/images/duck-in-bathtub.png";
 
-const linkedinLink = socialLinks.find((sl) => sl.name === "linkedin")?.link;
+const linkedinLink = socialLinks.find(sl => sl.name === "linkedin")?.link;
 if (!linkedinLink) {
   throw new Error("Missing 'linkedin' link");
 }
@@ -34,7 +34,7 @@ if (!linkedinLink) {
       <a href={linkedinLink} target="_blank"> my LinkedIn</a>.
     </p>
     <div class="mt-6">
-      {jobs.map((job) => <WorkItem clazz=" mb-14" job={job} />)}
+      {jobs.map(job => <WorkItem clazz=" mb-14" job={job} />)}
     </div>
 
     <Image
@@ -44,6 +44,22 @@ if (!linkedinLink) {
     />
   </div>
 </section>
+
+<script>
+  // The length of current positions (with end=new Date()) can only be calculated on the client side
+  import { humanReadableLength } from "../utilities/dates";
+
+  const positionsWithoutEnd = document.querySelectorAll<HTMLElement>(
+    `.work-length[data-start]`,
+  );
+
+  positionsWithoutEnd.forEach(el => {
+    if (el.dataset.start) {
+      const start = new Date(parseInt(el.dataset.start ?? ""));
+      el.innerText = `(${humanReadableLength(start, new Date())})`;
+    }
+  });
+</script>
 
 <style>
   /* Less than 600px width */

@@ -1,3 +1,8 @@
 <footer class="py-4 text-center text-sm text-gray-600">
-  © {new Date().getFullYear()} Andrea Velásquez Gushiken. All rights reserved.
+  © <span id="footer-year">{new Date().getFullYear()}</span> Andrea Velásquez Gushiken.
+  All rights reserved.
 </footer>
+
+<script is:inline>
+  document.getElementById("footer-year").innerText = new Date().getFullYear();
+</script>

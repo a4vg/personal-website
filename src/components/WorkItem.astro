@@ -45,14 +45,21 @@ const { job, clazz = "" } = Astro.props;
   </div>
 
   {
-    job.positions.map((p) => (
+    job.positions.map(p => (
       <div class="mt-5 flex flex-col gap-2 xs:flex-row xs:gap-0 sm:mt-8 md:ml-20">
         {/* title and dates info */}
         <div class="flex flex-row justify-between xs:flex-shrink-0 xs:flex-col xs:justify-center xs:border-r xs:pr-2 xs:text-right md:pr-4">
           <p class="pr-4 font-bold xs:mb-1 xs:pr-0">{p.title}</p>
           <div class="flex-shrink-0 text-right">
             <p>{humanReadablePeriod(p.start, p.end)}</p>
-            <p>({humanReadableLength(p.start, p.end ?? new Date())})</p>
+            <p>
+              <span
+                class="work-length"
+                data-start={p.end ? null : p.start.getTime()}
+              >
+                ({p.end ? humanReadableLength(p.start, p.end) : ""})
+              </span>
+            </p>
           </div>
         </div>
         {/* job description and stack */}
